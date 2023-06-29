@@ -50,7 +50,8 @@
   export let disabled = false
   /** Pass custom classes */
   let classes = ''
-  export { classes as class }
+  let inputClasses = ''
+  export { classes as class , inputClasses as inputClass }
 
   /** Format string */
   export let format = 'yyyy-MM-dd HH:mm:ss'
@@ -131,6 +132,7 @@
 
 <div class="date-time-field {classes}" on:focusout={onFocusOut} on:keydown={keydown}>
   <input
+    class={inputClasses}
     class:invalid={!valid}
     type="text"
     value={text}
